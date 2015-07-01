@@ -114,3 +114,4 @@ RUN cd /tmp/php-zmq && make install
 RUN touch /usr/local/etc/php/conf.d/zmq.ini
 RUN echo "extension=zmq.so" >> /usr/local/etc/php/conf.d/zmq.ini
 
+CMD ["php", "-a"]
