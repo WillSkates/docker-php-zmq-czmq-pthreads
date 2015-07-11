@@ -47,6 +47,13 @@ RUN buildDeps=" \
 RUN apt-get update
 RUN apt-get upgrade -y
 
+RUN apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libpng12-dev \
+    && docker-php-ext-install mcrypt mbstring
+
 RUN apt-get install -y git curl wget python-software-properties software-properties-common pkg-config automake libtool checkinstall python-setuptools python-pip build-essential g++
 
 RUN ln -s /usr/bin/libtoolize /usr/bin/libtool
